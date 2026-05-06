@@ -24,9 +24,9 @@ const products = [
   },
   {
     id: 4,
-    name: 'Casual Cargo Pants',
+    name: 'T-Shirt',
     price: '₹299',
-    description: 'Relaxed fit cargos with utility pockets, combining form and function.',
+    description: 'Minimalist drop-shoulder tee designed for everyday modern confidence.',
     image: '/images/cargo.png',
   }
 ];
@@ -50,7 +50,7 @@ const Products = () => {
   return (
     <section id="products" className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <div className="text-center mb-16">
-        <motion.h2 
+        <motion.h2
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -59,7 +59,7 @@ const Products = () => {
         >
           Latest <span className="text-[#f97316]">Arrivals</span>
         </motion.h2>
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, scaleX: 0 }}
           whileInView={{ opacity: 1, scaleX: 1 }}
           viewport={{ once: true }}
@@ -68,7 +68,7 @@ const Products = () => {
         ></motion.div>
       </div>
 
-      <motion.div 
+      <motion.div
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -76,7 +76,7 @@ const Products = () => {
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-6"
       >
         {products.map((product) => (
-          <motion.div 
+          <motion.div
             key={product.id}
             variants={itemVariants}
             whileHover={{ y: -10 }}
@@ -84,9 +84,9 @@ const Products = () => {
           >
             {/* Image Container */}
             <div className="relative aspect-[4/5] overflow-hidden bg-[#1a1a1a]">
-              <img 
-                src={product.image} 
-                alt={product.name} 
+              <img
+                src={product.image}
+                alt={product.name}
                 className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -100,7 +100,7 @@ const Products = () => {
               <p className="text-sm text-gray-400 mb-4 flex-grow font-light leading-relaxed">
                 {product.description}
               </p>
-              
+
               <div className="flex items-center justify-between mt-auto pt-4 border-t border-white/10">
                 <span className="text-2xl font-bold text-white">{product.price}</span>
                 <button className="bg-white/10 hover:bg-[#f97316] text-white px-5 py-2.5 rounded-lg font-medium transition-all duration-300 hover:glow-box hover:shadow-[0_0_15px_rgba(249,115,22,0.5)] active:scale-95 text-sm uppercase tracking-wider">
